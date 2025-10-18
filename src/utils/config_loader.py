@@ -17,7 +17,8 @@ def load_config(config_path=None):
         dict: Configuration dictionary
     """
     if config_path is None:
-        config_path = Path(__file__).parent.parent / "config" / "config.yaml"
+        # Go up to project root and find config
+        config_path = Path(__file__).parent.parent.parent / "config" / "config.yaml"
     
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
@@ -35,7 +36,7 @@ def get_data_path(filename=None):
     Returns:
         Path: Path object for data directory or file
     """
-    data_dir = Path(__file__).parent.parent / "data"
+    data_dir = Path(__file__).parent.parent.parent / "data"
     
     if filename:
         return data_dir / filename
