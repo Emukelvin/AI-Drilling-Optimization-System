@@ -1,0 +1,47 @@
+# Default configuration for AI Drilling Optimization System
+
+drilling:
+  default_wob: 80  # Weight on Bit (kN)
+  default_rpm: 120  # Rotary Speed (RPM)
+  default_flow_rate: 1000  # Flow Rate (LPM)
+  default_mud_weight: 1200  # Mud Weight (kg/m³)
+  default_bit_diameter: 12.25  # Bit Diameter (inches)
+  default_pipe_od: 5.0  # Pipe Outer Diameter (inches)
+  default_tvd: 2000  # True Vertical Depth (m)
+  mud_viscosity: 0.03  # Mud Viscosity (Pa·s)
+  max_wob: 150
+  max_rpm: 200
+  max_flow_rate: 2000
+
+formation:
+  default_strength: 30  # Formation Strength (MPa)
+  default_abrasiveness: 0.5  # Formation Abrasiveness (0-1)
+  default_pore_pressure: 300  # Pore Pressure (bar)
+  default_fracture_gradient: 1800  # Fracture Gradient (kg/m³)
+
+safety:
+  max_risk_threshold: 0.7  # Maximum acceptable risk (0-1)
+  min_efficiency_threshold: 0.3  # Minimum efficiency threshold (0-1)
+  max_vibration: 0.8  # Maximum vibration (0-1)
+  max_bit_wear_rate: 0.08  # Maximum bit wear rate (fraction per hour)
+
+optimization:
+  target_rop: 20  # Target Rate of Penetration (m/hr)
+  max_acceptable_risk: 0.3  # Maximum risk for optimization (0-1)
+  physics_weight: 0.6  # Weight for physics-based predictions (0-1)
+  ml_weight: 0.4  # Weight for ML predictions (0-1)
+
+ml:
+  model_directory: models/trained
+  training_test_split: 0.2
+  random_seed: 42
+
+data:
+  synthetic_data_dir: data/synthetic
+  real_data_dir: data/real
+  num_training_samples: 1000
+
+dashboard:
+  title: AI-Driven Autonomous Drilling Optimization System
+  port: 8501
+  refresh_rate: 5  # seconds
