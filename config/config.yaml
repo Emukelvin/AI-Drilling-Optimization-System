@@ -1,0 +1,41 @@
+# Configuration for AI Drilling Optimization System
+
+# Model Parameters
+model:
+  learning_rate: 0.001
+  epochs: 100
+  batch_size: 32
+  validation_split: 0.2
+  random_state: 42
+
+# Risk Thresholds
+risk_thresholds:
+  wellbore_instability: 0.7
+  stuck_pipe: 0.6
+  kick_risk: 0.8
+
+# Optimization Parameters
+optimization:
+  update_interval: 5  # seconds
+  max_wob_adjustment: 10  # percentage
+  max_rpm_adjustment: 15  # percentage
+  max_flow_rate_adjustment: 8  # percentage
+
+# Physics Model Parameters
+physics:
+  formation_pressure_gradient: 0.465  # psi/ft
+  fracture_gradient: 0.8  # psi/ft
+  mud_weight_range: [8.5, 16.0]  # ppg
+  temperature_gradient: 0.015  # degF/ft
+
+# Sustainability Targets
+sustainability:
+  target_fuel_reduction: 15  # percentage
+  target_co2_reduction: 20  # percentage
+  monitor_emissions: true
+
+# Dashboard Settings
+dashboard:
+  refresh_rate: 2  # seconds
+  max_data_points: 1000
+  port: 8501
